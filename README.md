@@ -65,7 +65,6 @@ The system analyzes uploaded voice recordings and:
 ## Datasets
 
 - ASVspoof
-- WaveFake
 
 ---
 
