@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+python-multipart
+sqlalchemy
+psycopg2-binary
+librosa
+soundfile
+torch
+torchaudio
+transformers
+huggingface-hub
+safetensorspy 
