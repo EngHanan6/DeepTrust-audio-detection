@@ -7,8 +7,10 @@ from datetime import datetime
 # -----------------------------
 
 
+DATABASE_URL = "postgresql://postgres:1234@localhost:5433/deeptrust"
 
 engine = create_engine(
+     DATABASE_URL,
     
     future=True
 )

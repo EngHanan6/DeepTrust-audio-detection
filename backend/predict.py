@@ -1,5 +1,6 @@
 import torch
-import torchaudio
+import librosa
+
 from transformers import (
     AutoFeatureExtractor,
     HubertForSequenceClassification
@@ -15,10 +16,10 @@ feature_extractor = AutoFeatureExtractor.from_pretrained(MODEL_PATH)
 
 model = HubertForSequenceClassification.from_pretrained(MODEL_PATH)
 
-model.eval()
-
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
 model.to(device)
+model.eval()
 
 # -----------------------------
 # Labels
@@ -29,37 +30,30 @@ id2label = {
     1: "Fake"
 }
 
-
 # -----------------------------
 # Prediction Function
 # -----------------------------
 
 def predict_audio(audio_path):
 
-    waveform, sample_rate = torchaudio.load(audio_path)
+    waveform, sample_rate = librosa.load(
+        audio_path,
+        sr=16000,
+        mono=True
+    )
 
-    # Convert to Mono
-    if waveform.shape[0] > 1:
-        waveform = waveform.mean(dim=0, keepdim=True)
-
-    # Resample
-    if sample_rate != 16000:
-        resampler = torchaudio.transforms.Resample(
-            sample_rate,
-            16000
-        )
-        waveform = resampler(waveform)
+    waveform = torch.tensor(waveform)
 
     inputs = feature_extractor(
-        waveform.squeeze().numpy(),
+        waveform.numpy(),
         sampling_rate=16000,
         return_tensors="pt",
         padding=True
     )
 
     inputs = {
-        k: v.to(device)
-        for k, v in inputs.items()
+        key: value.to(device)
+        for key, value in inputs.items()
     }
 
     with torch.no_grad():
@@ -83,7 +77,3 @@ def predict_audio(audio_path):
             2
         )
     }
-
-#result = predict_audio("test.wav") #change the path to your audio file
-
-#ٍprint(result)

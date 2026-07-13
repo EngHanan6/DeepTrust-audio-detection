@@ -3,6 +3,8 @@ import os
 import shutil
 import traceback
 
+from huggingface_hub import delete_file
+
 from database import (
     save_audio_file,
     save_result,
@@ -61,18 +63,20 @@ def upload_file(file: UploadFile = File(...)):
             "filename": file.filename
         }
 
-    except Exception as e:
-        print("========== ERROR ==========")
-        print(str(e))
-        traceback.print_exc()
-        print("===========================")
-        raise e
+    except Exception as error:
+       delete_file(file_path)
+
+    print("\n========== ERROR ==========")
+    print(error)
+    traceback.print_exc()
+    print("===========================\n")
+
+    raise
 
 
 # -----------------------------
 # Get Results
 # -----------------------------
-
 @app.get("/results", response_model=list[AnalysisResponse])
 def get_results():
     return get_all_results()
