@@ -74,7 +74,15 @@ A demonstration video of the project is available at the following link:
 
 🔗 https://drive.google.com/file/d/1YBdLhrFV4xJ5llTsVeB_70zvCspMtMDd/view?usp=drivesdk
 
+---
 
+## First-Time Setup
+
+Please follow the setup guide before running the project:
+
+🔗 https://drive.google.com/file/d/1b4zZkrXeOEoIo4bUlP0c9J8f3m6IT5y1/view?usp=drive_link
+
+---
 
 ## Team
 
