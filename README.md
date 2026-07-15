@@ -54,9 +54,6 @@ The system analyzes uploaded voice recordings and:
 ### Database
 - PostgreSQL
 
-### Deployment
-- Docker
-
 ### Version Control
 - Git & GitHub
 
