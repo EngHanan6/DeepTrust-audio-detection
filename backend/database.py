@@ -6,8 +6,8 @@ from datetime import datetime
 # Database Connection
 # -----------------------------
 
-
-DATABASE_URL = "postgresql://postgres:1234@localhost:5433/deeptrust"
+#CHANGE THIS
+DATABASE_URL = "postgresql://postgres:YOUR-PASSWORD@localhost:5433/deeptrust"
 
 engine = create_engine(
      DATABASE_URL,
