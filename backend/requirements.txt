@@ -9,4 +9,4 @@ torch
 torchaudio
 transformers
 huggingface-hub
-safetensorspy 
+safetensors
