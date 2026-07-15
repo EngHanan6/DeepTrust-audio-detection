@@ -70,9 +70,10 @@ The system analyzes uploaded voice recordings and:
 
 ## Demo Video
 
-A demonstration video of the project is available at the following link:
+A live demo video of the project is available at the following link:
 
-🔗 https://drive.google.com/file/d/1YBdLhrFV4xJ5llTsVeB_70zvCspMtMDd/view?usp=drivesdk
+🔗 https://drive.google.com/file/d/1CXiHxnEGqbmMaWCnyXWfOgkYvSNQwtD8/view?usp=sharing
+
 
 ---
 
