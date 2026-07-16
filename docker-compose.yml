@@ -2,7 +2,7 @@ services:
 
   postgres:
     image: postgres:16
-    container_name: deeptrust_postgres
+    
 
     restart: unless-stopped
 
@@ -19,7 +19,7 @@ services:
 
   backend:
     image: dima12004/deeptrust-backend:latest
-    container_name: deeptrust_backend
+    
 
     restart: unless-stopped
 
@@ -34,7 +34,7 @@ services:
 
   frontend:
     image: dima12004/deeptrust-frontend:latest
-    container_name: deeptrust_frontend
+   
 
     restart: unless-stopped
 
