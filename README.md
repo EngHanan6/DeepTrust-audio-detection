@@ -64,6 +64,92 @@ The system analyzes uploaded voice recordings and:
 - ASVspoof
 
 ---
+---
+
+## Docker Deployment
+
+The project is fully containerized using Docker.
+
+### Prerequisites
+
+- Docker Desktop
+
+---
+
+### Run the Project
+
+Clone the repository:
+
+```bash
+git clone https://github.com/YOUR_USERNAME/DeepTrust.git
+```
+
+Navigate to the project folder:
+
+```bash
+cd DeepTrust
+```
+
+Start all services:
+
+```bash
+docker compose up
+```
+
+Or run them in the background:
+
+```bash
+docker compose up -d
+```
+
+The application will automatically:
+
+- Pull the latest Backend image from Docker Hub.
+- Pull the latest Frontend image from Docker Hub.
+- Start PostgreSQL.
+- Load the AI model.
+- Launch the complete application.
+
+---
+
+### Access the Application
+
+Frontend:
+
+```
+http://localhost:5173
+```
+
+Backend API Documentation:
+
+```
+http://localhost:8000/docs
+```
+
+---
+
+### Stop the Project
+
+```bash
+docker compose down
+```
+
+---
+
+### Docker Images
+
+Backend:
+
+```
+dima12004/deeptrust-backend:latest
+```
+
+Frontend:
+
+```
+dima12004/deeptrust-frontend:latest
+```
+---
 
 ## Demo Video
 
@@ -77,10 +163,17 @@ A live demo of the API & AI model is available at the following link:
 
 
 ---
-
 ## First-Time Setup
 
-Please follow the setup guide before running the project:
+Choose one of the following options:
+
+### Option 1 (Recommended)
+
+Run the project using Docker by following the **Docker Deployment** section above.
+
+### Option 2
+
+If you prefer running the project manually without Docker, please follow the setup guide:
 
 🔗 https://drive.google.com/file/d/1CXtPdXxLLnA49lKSUwAWzOrEXPlwJkMZ/view?usp=sharing
 
