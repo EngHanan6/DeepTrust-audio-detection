@@ -6,8 +6,13 @@ from datetime import datetime
 # Database Connection
 # -----------------------------
 
-#CHANGE THIS
-DATABASE_URL = "postgresql://postgres:YOUR-PASSWORD@localhost:5433/deeptrust"
+import os
+
+DATABASE_URL = os.getenv(
+    "DATABASE_URL",
+    "postgresql://postgres:1234@localhost:5434/deeptrust"
+)
+
 
 engine = create_engine(
      DATABASE_URL,
