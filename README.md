@@ -127,6 +127,15 @@ http://localhost:8000/docs
 
 ---
 
+### Test the Project
+
+1. Select an audio file.
+2. Please use the audio samples provided in the following folder:
+🔗 https://drive.google.com/drive/folders/1JLhdFH1_JKCHJyzYj2Xo4miy6yYEU23G?usp
+=sharing
+
+---
+
 ### Stop the Project
 
 ```bash
